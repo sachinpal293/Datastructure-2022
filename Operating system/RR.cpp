@@ -11,6 +11,7 @@ void findWaitingTime(int processes[], int n,
 	// burst times.
 	int rem_bt[n];
 	for (int i = 0 ; i < n ; i++)
+	
 		rem_bt[i] = bt[i];
 
 	int t = 0; // Current time
