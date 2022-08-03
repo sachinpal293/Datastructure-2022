@@ -38,3 +38,4 @@ int main()
         cout<<i<<endl;
     }
 }
+//sort() function belongs to "Intro sort"s = quick+heap+insertion sort

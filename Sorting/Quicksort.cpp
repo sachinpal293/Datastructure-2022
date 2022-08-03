@@ -62,8 +62,8 @@ void quicksort(int arr[], int s, int e)
 
 int main()
 {
-    int arr[5] = {2,4,1,6,9};
-    int n = 5;
+    int arr[] = {10,5,9,27,36,78,65,55,12};
+    int n = 9;
     quicksort(arr,0,n-1);
 
     for(int i = 0;i<n;i++)
