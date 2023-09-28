@@ -22,3 +22,32 @@ public static void rev(int[] arr, int start, int end)
        
        revwithSingle(arr,start+1);
   }
+
+
+// Print the all subsequence
+        
+public static void printSub(int indx, ArrayList<Integer> list, int[] arr, int n)
+    {
+        if(indx>=n)
+        {
+            for(int i : list)
+            {
+                System.out.print(i+" ");
+            }
+            if(list.size()==0)
+            {
+                System.out.println("[]");
+            }
+            System.out.println();
+            return;
+        }
+        
+        list.add(arr[indx]);
+        printSub(indx+1,list,arr,n);
+        list.remove(list.size()-1);
+        printSub(indx+1, list, arr, n);
+    }
+
+
+//
+
