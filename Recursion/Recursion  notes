@@ -1,0 +1,24 @@
+// Reverse array with two pointer
+public static void rev(int[] arr, int start, int end)
+ {
+        if(start>end) return;
+        
+       int  temp = arr[start];
+       arr[start] = arr[end];
+       arr[end] = temp;
+       
+       rev(arr,start+1,end-1);
+  }
+
+// Reverse Array with single pointer
+
+ public static void revwithSingle(int[] arr, int start)
+  {
+        if(start>=arr.length/2) return;
+        
+       int  temp = arr[start];
+       arr[start] = arr[arr.length-start-1];
+       arr[arr.length-start-1] = temp;
+       
+       revwithSingle(arr,start+1);
+  }
