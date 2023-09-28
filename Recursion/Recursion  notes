@@ -49,5 +49,61 @@ public static void printSub(int indx, ArrayList<Integer> list, int[] arr, int n)
     }
 
 
-//
+// print the all subsequence which sum is equal to the give sum
 
+ public static void printSub(int indx, ArrayList<Integer> list, int[] arr, int n, int s,int sum)
+    {
+        if(indx>=n)
+        {
+            if(s==sum)
+            {
+            for(int i : list)
+            {
+                System.out.print(i+" ");
+            }
+                System.out.println();
+            }
+            return;
+        }
+        
+        list.add(arr[indx]);
+        s += arr[indx];
+        printSub(indx+1,list,arr,n,s, sum);
+        s -=arr[indx];
+        list.remove(list.size()-1);
+        printSub(indx+1, list, arr, n,s,sum);
+    }
+    
+//Print the subsequnce sum is equal to the given sum
+
+public static boolean printSub(int indx, ArrayList<Integer> list, int[] arr, int n, int s,int sum)
+    {
+        if(indx>=n)
+        {
+            if(s==sum)
+            {
+            for(int i : list)
+            {
+                System.out.print(i+" ");
+            }
+                System.out.println();
+                return true;
+            }
+            return false;
+        }
+        
+        list.add(arr[indx]);
+        s += arr[indx];
+        if(printSub(indx+1,list,arr,n,s, sum)==true)
+        {
+            return true;
+        }
+        s -=arr[indx];
+        list.remove(list.size()-1);
+        if(printSub(indx+1, list, arr, n,s,sum)==true)
+        {
+            return true;
+        }
+        
+        return false;
+    }
